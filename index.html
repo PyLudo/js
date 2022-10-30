@@ -1,34 +1,90 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <font face='Candara' size=5>
-<b>
-      <script>
-      var n=prompt('Inserisci un numero naturale. Verranno restituiti tutti i numeri primi minori o uguali di quel numero.')
-      document.write('I numeri primi minori o uguali a '+ n +' sono:')
-      </script> </b>
-      <br>
-      <font face='Candara' size=4>
-  <script>
-  var n=n;
-  for (var a = 0; a <= n; a++) {
-    for (var i = 0; i < (a/2)+1; i++) {
-      if (a % i == 0) {
-        var x=i
-      };
-    };
-    if (x==1) {
-      document.write(a+' - ')
-    } else {
+<html>
+<head>
+    <title>Primes</title>
 
-    };
+    <style>
+        #paragraph{
+           font-family: 'Courier New', Courier, monospace;
+           font-size: large;
+           font-weight: 600;
+        }
+        #paragraph0{
+           font-family: 'Courier New', Courier, monospace;
+           font-size: large;
+           font-weight: 600;
+           color: red;
+        }
+    </style>
 
-  };
 
-  </script>
-  </body>
+
+</head>
+
+<body>
+    <p id="paragraph0">Total: 0</p>
+    <p id="paragraph">Results will be shown here</p>
+    <script>
+        outputP = document.getElementById('paragraph')
+
+
+        function prime_check(self){
+            numero = parseInt(self)
+            outputP.innerHTML = 'Loading...'
+        
+            k = Math.ceil(numero/2)+1
+            // console.log(k, 0)
+        
+            for(let i=2; i<k; i++){
+                // console.log(i, k)
+                if(numero%i == 0){
+                    
+                    return('.')
+                    break
+                }
+                    
+                else{
+                    k0 = parseInt(numero/i)
+                    // console.log(k0, 1)
+                    if(i>=k0){
+                        // console.log('fine', i,)
+                        return(self)
+                        break
+                    }
+                    else {
+                        // console.log(i, 2)
+                    }
+                }
+        
+        
+        }
+        }
+        
+        lista = [2]
+        bound = parseInt(prompt('Insert a positive integer: '))
+        
+        for(let j = 3; j<bound; j++){
+            let q = prime_check(j)
+            // console.log(q)
+            if(q != '.'){
+                lista.push(q)
+            }
+           
+        }
+        
+        
+        for(j in lista){
+        
+            if(j == 0){
+               outputP.innerHTML = ''
+               document.getElementById('paragraph0').innerHTML = 'Total: ' + String(lista.length) + '<br>'
+            }
+            outputP.innerHTML += String(lista[j]) + ' - '
+        
+            
+        }
+        </script>
+</body>
+
+
 </html>
