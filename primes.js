@@ -4,6 +4,10 @@ btnP = document.getElementById('nexter')
 infoSpan = document.getElementById('info')
 pageSpan = document.getElementById('page')
 
+para = document.createElement('p');
+para.innerHTML = String(window.innerWidth)
+
+
 function prime_check(self){
     numero = parseInt(self)
     //outputP.innerHTML = 'Loading...'
