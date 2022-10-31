@@ -120,7 +120,10 @@ function draw(){
     start = (lowerBound/1000)+1;
     end = parseInt((lista.length -1) / 1000) +1
     pageSpan.innerHTML = String(start) + '/' + String(end)
-
+    if(window.screen.width<600){
+        oldT = infoSpan.innerHTML
+        infoSpan.innerHTML = '<br><br>' + oldT
+    }
 }
 
 function adjustP(){
@@ -144,7 +147,3 @@ function adjustM(){
 
 
 draw()
-if(window.screen.width<500){
-    oldT = infoSpan.innerHTML
-    infoSpan.innerHTML = '<br><br>' + oldT
-}
