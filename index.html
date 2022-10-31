@@ -53,6 +53,27 @@
             background-color: aliceblue;
         }
 
+        #insert {
+            margin-left: 2%;
+            width: 1ch;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: medium;
+            color: blue;
+            font-weight: 600;
+            margin-right: 0;
+            border: 1px solid blue;
+            border-radius: 2px;
+            outline-color: blue;
+            
+            
+        }
+
+        #page {
+            margin-left: 0;
+        }
+
+        
+
         
 
 
@@ -70,7 +91,9 @@
     <button id="backer", onclick="adjustM()", class="btn">Previous</button>
     <button id="nexter", onclick="adjustP()", class="btn">Next</button>
     <span id="info", class="info"></span>
-    <span id="page", class="info">0</span>
+    <input id="insert" type="text" value="1", placeholder="", onkeypress="handler(event)"><span id="page", class="info">/0</span></input>
+    
+    
     <p id="paragraph">Results will be shown here</p>
     <script src="primes.js"></script>
 </body>
