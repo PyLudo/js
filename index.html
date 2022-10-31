@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primes</title>
-
+    
     <style>
         #paragraph{
            font-family: 'Courier New', Courier, monospace;
            font-size: large;
            font-weight: 600;
         }
-        #paragraph0{
+
+        .paragraph0{
            font-family: 'Courier New', Courier, monospace;
            font-size: large;
            font-weight: 600;
            color: red;
+           
         }
+
+        #paraPred{
+            margin-top: 0;
+        }
+
+        #paragraph0 {
+            margin-bottom: 3px;
+        }
+     
+
+
         .info{
             font-family: 'Courier New', Courier, monospace;
             font-size: medium;
@@ -39,8 +52,14 @@
             background-color: aliceblue;
         }
 
+        @media  screen and (max-width: 600px) {
+            #paraPred {
+                font-size: medium;
+            }
+        }
 
-       
+
+      
 
     </style>
 
@@ -49,7 +68,8 @@
 </head>
 
 <body>
-    <p id="paragraph0">Total: 0</p>
+    <p id="paragraph0", class="paragraph0">Total: 0</p>
+    <p id="paraPred", class="paragraph0"></p>
     <button id="backer", onclick="adjustM()", class="btn">Previous</button>
     <button id="nexter", onclick="adjustP()", class="btn">Next</button>
     <span id="info", class="info"></span>
