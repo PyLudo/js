@@ -15,6 +15,44 @@
            font-weight: 600;
            color: red;
         }
+        .info{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: medium;
+            color: blue;
+            font-weight: 600;
+            margin-left: 20px;
+            
+        }
+
+        .btn{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 600;
+            color:blue;
+            font-size: medium;
+            border: 2px solid blue;
+            border-radius: 10px;
+           
+        }
+
+        .btn:active {
+            background-color: aliceblue;
+        }
+
+
+        @media screen and (max-width: 700px) {
+            .btn {
+                
+                font-size: larger;
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            .btn {
+                
+                font-size: medium;
+            }
+        }
+
     </style>
 
 
@@ -23,68 +61,21 @@
 
 <body>
     <p id="paragraph0">Total: 0</p>
+    <button id="backer", onclick="adjustM()", class="btn">Previous</button>
+    <button id="nexter", onclick="adjustP()", class="btn">Next</button>
+    <span id="info", class="info"></span>
+    <span id="page", class="info">0</span>
     <p id="paragraph">Results will be shown here</p>
-    <script>
-        outputP = document.getElementById('paragraph')
-
-
-        function prime_check(self){
-            numero = parseInt(self)
-            outputP.innerHTML = 'Loading...'
-        
-            k = Math.ceil(numero/2)+1
-            // console.log(k, 0)
-        
-            for(let i=2; i<k; i++){
-                // console.log(i, k)
-                if(numero%i == 0){
-                    
-                    return('.')
-                    break
-                }
-                    
-                else{
-                    k0 = parseInt(numero/i)
-                    // console.log(k0, 1)
-                    if(i>=k0){
-                        // console.log('fine', i,)
-                        return(self)
-                        break
-                    }
-                    else {
-                        // console.log(i, 2)
-                    }
-                }
-        
-        
-        }
-        }
-        
-        lista = [2]
-        bound = parseInt(prompt('Insert a positive integer: '))
-        
-        for(let j = 3; j<bound; j++){
-            let q = prime_check(j)
-            // console.log(q)
-            if(q != '.'){
-                lista.push(q)
-            }
-           
-        }
-        
-        
-        for(j in lista){
-        
-            if(j == 0){
-               outputP.innerHTML = ''
-               document.getElementById('paragraph0').innerHTML = 'Total: ' + String(lista.length) + '<br>'
-            }
-            outputP.innerHTML += String(lista[j]) + ' - '
-        
-            
-        }
-        </script>
+    <script src="primes.js"></script>
 </body>
+
+
+
+
+
+
+
+
 
 
 </html>
