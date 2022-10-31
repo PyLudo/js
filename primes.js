@@ -6,6 +6,10 @@ pageSpan = document.getElementById('page')
 
 
 
+// para = document.createElement('p')
+// para.innerHTML = String(window.screen.width) + 'x' + String(window.screen.height)
+// document.body.appendChild(para)
+
 function prime_check(self){
     numero = parseInt(self)
     //outputP.innerHTML = 'Loading...'
@@ -73,7 +77,8 @@ var counter = 1
 
 
 var theorem = Math.round(bound *100 / (Math.log(bound)))/100
-document.getElementById('paragraph0').innerHTML = 'Total: ' + String(counter) + '<br>Prediction =  n / ln(n) ≈ ' + String(theorem)
+document.getElementById('paragraph0').innerHTML = 'Total: ' + String(counter) 
+document.getElementById('paraPred').innerHTML =  'Prediction =  n/ln(n) ≈ ' + String(theorem)
 
 
 // for(j in lista){
@@ -139,3 +144,7 @@ function adjustM(){
 
 
 draw()
+if(window.screen.width<500){
+    oldT = infoSpan.innerHTML
+    infoSpan.innerHTML = '<br><br>' + oldT
+}
