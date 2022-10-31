@@ -51,6 +51,8 @@ lista = [2]
 bound = parseInt(prompt('Inserire un intero positivo: '))
 var counter = 1
 
+document.title = 'Primes < ' + String(bound)
+document.getElementById('paragraph00').innerHTML = 'Primes < ' + String(bound)
 // for(let j = 3; j<bound; j++){
 //     let q = prime_check(j)
 //     // console.log(q)
