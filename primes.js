@@ -3,7 +3,7 @@ outputP.innerHTML = ''
 btnP = document.getElementById('nexter')
 infoSpan = document.getElementById('info')
 pageSpan = document.getElementById('page')
-
+insert = document.getElementById('insert')
 
 
 // para = document.createElement('p')
@@ -119,18 +119,25 @@ function draw(){
     infoSpan.innerHTML = 'from ' + String(lista[lowerBound]) + ' to ' + String(last)
     start = (lowerBound/1000)+1;
     end = parseInt((lista.length -1) / 1000) +1
-    pageSpan.innerHTML = String(start) + '/' + String(end)
+    insert.value = start 
+    pageSpan.innerHTML = '/' + String(end)
     if(window.screen.width<600){
         oldT = infoSpan.innerHTML
         infoSpan.innerHTML = '<br><br>' + oldT
     }
+
+    insert.style.width = String((String(upperBound)).length) + 'ch'
+    //console.log(lowerBound, upperBound)
 }
+
+
+
 
 function adjustP(){
     if((upperBound)*1000<=lista.length-1){
     lowerBound += 1000
     upperBound += 1
-    console.log('adjusted')
+    //console.log('adjusted')
     }
     draw()
 }
@@ -139,11 +146,45 @@ function adjustM(){
     if(lowerBound >= 1000){
     lowerBound -= 1000
     upperBound -= 1
-    console.log('adjusted')
+    //console.log('adjusted')
     }
 
     draw()
 }
 
 
+function handler(e){
+    console.log('handling....')
+    if(Number.isInteger(parseInt(insert.value))){
+        console.log('expan', insert.value)
+        insert.style.width = String(String(insert.value).length +1) + 'ch'
+    }
+    
+
+    if(e['key'] == 'Enter'){
+        let num = parseInt(insert.value);
+        end = parseInt((lista.length -1) / 1000) +1
+        if(num>0 && num<=end){
+        
+        lowerBound = (num-1)*1000;
+        upperBound = num
+        
+        draw()
+        insert.blur()
+        }
+
+        else {
+            
+            insert.value = upperBound
+            insert.style.width = String(String(upperBound).length) + 'ch'
+            
+        }
+    
+}
+}
+
+
 draw()
+
+
+
