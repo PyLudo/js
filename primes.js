@@ -48,7 +48,7 @@ function prime_check(self){
 }
 
 lista = [2]
-bound = parseInt(prompt('Inserire un intero positivo: '))
+bound = parseInt(prompt('Insert a positive integer: '))
 var counter = 1
 
 document.title = 'Primes < ' + String(bound)
